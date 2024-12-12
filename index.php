@@ -33,6 +33,10 @@
         <section class="about-projects">
             <?php include "./components/about-projects.php" ?>
         </section>
+
+        <section class="text">
+            
+        </section>
     </main>
 
     <footer></footer>
