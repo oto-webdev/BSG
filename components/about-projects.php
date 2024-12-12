@@ -4,7 +4,7 @@
     <div class="card-list">
         <div class="card">
              <div>
-                <img src="../images/1.png" alt="project">
+                <img src="../images/3.jpg" alt="project">
             </div>
             <p>დასრულებული პროექტები</p>
         </div>

@@ -35,7 +35,15 @@
         </section>
 
         <section class="text">
-            
+            <?php include "./components/text.php" ?>
+        </section>
+
+        <section class="news">
+            <?php include "./components/news.php" ?>
+        </section>
+
+        <section class="partner">
+            <?php include "./components/partner.php" ?>
         </section>
     </main>
 
