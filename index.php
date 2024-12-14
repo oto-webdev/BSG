@@ -256,25 +256,25 @@
         <div class="footer-item">
             <ul>
                 <li><a href="#">მთავარი</a></li>
-                <li><a href="#">ჩვენს შესახებ</a></li>
-                <li><a href="#">ლაბორატორია</a></li>
-                <li><a href="#">კონტაქტი</a></li>
-                <li><a href="#">ვაკანსია</a></li>
+                <li><a href="./pages/about/about.php">ჩვენს შესახებ</a></li>
+                <li><a href="./pages/about/laboratory.php">ლაბორატორია</a></li>
+                <li><a href="./pages/contact/contact.php">კონტაქტი</a></li>
+                <li><a href="./pages/contact/vacancy.php">ვაკანსია</a></li>
             </ul>
 
             <ul>
-                <li><a href="#">მიმდინარე პროექტები</a></li>
-                <li><a href="#">დასრულებული პროექტები</a></li>
-                <li><a href="#">ვიდეო გალერეა</a></li>
-                <li><a href="#">წარმოებული პროდუქცია</a></li>
-                <li><a href="#">ძირითადი საშუალებები</a></li>
+                <li><a href="./pages/project/current-projects.php">მიმდინარე პროექტები</a></li>
+                <li><a href="./pages/project/finished-projects..php">დასრულებული პროექტები</a></li>
+                <li><a href="./pages/project/video-gallery.php">ვიდეო გალერეა</a></li>
+                <li><a href="./pages/product-production.php">წარმოებული პროდუქცია</a></li>
+                <li><a href="./pages/common-values.php">ძირითადი საშუალებები</a></li>
             </ul>
 
             <ul>
-                <li><a href="#">აღაიანის წარმოების ბაზა</a></li>
-                <li><a href="#">სააკაძის წარმოების ბაზა</a></li>
-                <li><a href="#">ოზურეტის წარმოების ბაზა</a></li>
-                <li><a href="#">სიახლეები</a></li>
+                <li><a href="./pages/produce/agaiani.php">აღაიანის წარმოების ბაზა</a></li>
+                <li><a href="./pages/produce/saakadze.php">სააკაძის წარმოების ბაზა</a></li>
+                <li><a href="./pages/produce/ozurgeti.php">ოზურეთის წარმოების ბაზა</a></li>
+                <li><a href="./pages/news.php">სიახლეები</a></li>
             </ul>
         </div>
 
