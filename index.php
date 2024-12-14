@@ -41,13 +41,19 @@
         <section class="news">
             <?php include "./components/news.php" ?>
         </section>
-
+    
         <section class="partner">
             <?php include "./components/partner.php" ?>
         </section>
+
+        <section class="contact">
+            <?php include "./components/contact.php" ?>
+        </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <?php include "./components/footer.php" ?>
+    </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/app.js"></script>

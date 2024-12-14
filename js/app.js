@@ -1,19 +1,30 @@
 (() => {
-  const openNavMenu = document.querySelector(".open-nav-menu"),
-    closeNavMenu = document.querySelector(".close-nav-menu"),
-    navMenu = document.querySelector(".nav-menu"),
-    menuOverlay = document.querySelector(".menu-overlay"),
-    mediaSize = 1920;
+  // Cache DOM elements
+  const openNavMenu = document.querySelector(".open-nav-menu");
+  const closeNavMenu = document.querySelector(".close-nav-menu");
+  const navMenu = document.querySelector(".nav-menu");
+  const menuOverlay = document.querySelector(".menu-overlay");
+  const header = document.querySelector(".header");
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  const modal = document.getElementById("videoModal");
+  const iframe = document.getElementById("videoIframe");
+  const openModalBtns = document.querySelectorAll(".openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  const mediaSize = 1296;
+  let isScrolling;
+
+  // Navigation Menu Toggle
+  const toggleNav = () => {
+    navMenu.classList.toggle("open");
+    menuOverlay.classList.toggle("active");
+    document.body.classList.toggle("hidden-scrolling");
+  };
 
   openNavMenu.addEventListener("click", toggleNav);
   closeNavMenu.addEventListener("click", toggleNav);
   menuOverlay.addEventListener("click", toggleNav);
 
-  function toggleNav() {
-    navMenu.classList.toggle("open");
-    menuOverlay.classList.toggle("active");
-    document.body.classList.toggle("hidden-scrolling");
-  }
   navMenu.addEventListener("click", (event) => {
     if (
       event.target.hasAttribute("data-toggle") &&
@@ -21,6 +32,8 @@
     ) {
       event.preventDefault();
       const menuItemHasChildren = event.target.parentElement;
+
+      // Collapse other active submenus
       if (menuItemHasChildren.classList.contains("active")) {
         collapseSubMenu();
       } else {
@@ -28,105 +41,99 @@
           collapseSubMenu();
         }
         menuItemHasChildren.classList.add("active");
-        const subMenu = menuItemHasChildren.querySelector(".sub-menu");
-        subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+        menuItemHasChildren.querySelector(".sub-menu").style.maxHeight =
+          menuItemHasChildren.querySelector(".sub-menu").scrollHeight + "px";
       }
     }
   });
-  function collapseSubMenu() {
-    navMenu
-      .querySelector(".menu-item-has-children.active .sub-menu")
-      .removeAttribute("style");
-    navMenu
-      .querySelector(".menu-item-has-children.active")
-      .classList.remove("active");
-  }
-  function resizeFix() {
-    if (navMenu.classList.contains("open")) {
-      toggleNav();
+
+  const collapseSubMenu = () => {
+    const activeItem = navMenu.querySelector(".menu-item-has-children.active");
+    if (activeItem) {
+      activeItem.querySelector(".sub-menu").style.maxHeight = null;
+      activeItem.classList.remove("active");
     }
-    if (navMenu.querySelector(".menu-item-has-children.active")) {
+  };
+
+  const resizeFix = () => {
+    if (window.innerWidth > mediaSize) {
+      if (navMenu.classList.contains("open")) toggleNav();
       collapseSubMenu();
     }
-  }
+  };
 
-  window.addEventListener("resize", function () {
-    if (this.innerWidth > mediaSize) {
-      resizeFix();
+  window.addEventListener("resize", resizeFix);
+
+  // Header Sticky and Scroll Events
+  const stickyOffset = header.offsetTop;
+
+  const onScroll = () => {
+    const scrollY = window.scrollY;
+
+    // Sticky header
+    if (window.innerWidth >= mediaSize) {
+      if (scrollY > stickyOffset) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    } else {
+      header.classList.remove("sticky");
     }
+
+    // Scroll to top button visibility
+    if (scrollY > 50) {
+      scrollToTopBtn.classList.add("show");
+    } else {
+      scrollToTopBtn.classList.remove("show");
+    }
+  };
+
+  window.addEventListener("scroll", () => {
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(onScroll, 100); // Debounce
+  });
+
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Modal Functionality
+  openModalBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      iframe.src = btn.getAttribute("data-video");
+      modal.style.display = "flex";
+    });
+  });
+
+  const closeModal = () => {
+    modal.style.display = "none";
+    iframe.src = "";
+  };
+
+  closeModalBtn.addEventListener("click", closeModal);
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal();
+  });
+
+  // Swiper Initialization
+  document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".swiper-container", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      effect: "slide",
+      speed: 500,
+    });
   });
 })();
-
-const openNavMenu = document.querySelector('.open-nav-menu'); 
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 320) {
-    openNavMenu.style.backgroundColor = "#000300"; 
-  } else {
-    openNavMenu.style.backgroundColor = "";
-  }
-});
-
-// swiper
-document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".swiper-container", {
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    effect: "slide",
-    speed: 900,
-  });
-});
-
-/* modal */
-const modal = document.getElementById('videoModal');
-const iframe = document.getElementById('videoIframe');
-const openModalBtns = document.querySelectorAll('.openModalBtn'); 
-const closeModalBtn = document.getElementById('closeModalBtn');
-
-openModalBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const videoSrc = btn.getAttribute('data-video'); 
-    modal.style.display = 'flex';
-    iframe.src = videoSrc; 
-  });
-});
-
-closeModalBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  iframe.src = '';
-});
-
-window.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-    iframe.src = ''; 
-  }
-});
-
-//scroll to top btn
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    scrollToTopBtn.classList.add("show");
-  } else {
-    scrollToTopBtn.classList.remove("show");
-  }
-}
-
-window.onscroll = scrollFunction;
-
-scrollToTopBtn.addEventListener("click", function () {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
