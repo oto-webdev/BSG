@@ -1,0 +1,266 @@
+.bg {
+  background: url("../../images/about.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.bg h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 4rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1280px) {
+  .bg h2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .bg h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* contact */
+main {
+  margin: 6rem 0;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 3.2rem;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+form {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 5rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 20px;
+}
+
+input {
+  width: 50%;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid rgb(43, 43, 192);
+}
+
+.input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 140px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid rgb(43, 43, 192);
+}
+
+.submit {
+  width: 180px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: rgb(43, 43, 192);
+  color: white;
+}
+
+@media (max-width: 1280px) {
+  form {
+    width: 900px;
+  }
+}
+
+@media (max-width: 991px) {
+  form {
+    width: 700px;
+  }
+}
+
+@media (max-width: 840px) {
+  .contact {
+    margin: 2rem 4rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .submit {
+    width: 130px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  form {
+    width: 576px;
+  }
+}
+
+@media (max-width: 676px) {
+  form {
+    width: 475px;
+  }
+}
+
+@media (max-width: 540px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  form {
+    width: 375px;
+  }
+}
+
+@media (max-width: 430px) {
+  form {
+    width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  form {
+    width: 250px;
+  }
+}
+
+@media (max-width: 360px) {
+  form {
+    width: 240px;
+  }
+}
+
+@media (max-width: 320px) {
+  form {
+    width: 210px;
+  }
+}
+
+.icon {
+  margin: 8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.icon i {
+  font-size: 6rem;
+  color: rgb(43, 43, 192);
+}
+
+.icon h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: 1.2rem;
+}
+
+.icon p {
+  margin-top: 1rem;
+}
+
+/* file */
+.contain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgb(43, 43, 192), #7d63f0);
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.folder {
+  position: relative;
+  animation: float 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.folder:hover {
+  transform: scale(1.05);
+}
+
+.folder .top {
+  background: linear-gradient(135deg, #ff9a56, #ff6f56);
+  width: 80px;
+  height: 20px;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.folder .bottom {
+  background: linear-gradient(135deg, #ffe563, #ffc663);
+  width: 120px;
+  height: 80px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0 10px 10px 10px;
+  position: relative;
+  top: -10px;
+}
+
+.custom-file-upload {
+  font-size: 1.1em;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-block;
+  width: 100%;
+  max-width: 220px;
+}
+
+.custom-file-upload:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
