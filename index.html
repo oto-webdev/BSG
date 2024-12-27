@@ -18,6 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="./images/icon.png" />
@@ -160,7 +161,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section class="about" data-aos="fade-up">
         <div>
           <h2>ჩვენს შესახებ</h2>
           <p>
@@ -174,7 +175,7 @@
         </div>
       </section>
 
-      <section class="project" id="project-section">
+      <section class="project" id="project-section" data-aos="fade-right">
         <div>
           <h2>95</h2>
           <p>პროექტები</p>
@@ -189,7 +190,7 @@
         </div>
       </section>
 
-      <section class="about-projects">
+      <section class="about-projects" data-aos="slide-up">
         <div>
           <h2>პროექტები</h2>
 
@@ -213,7 +214,7 @@
       <section class="text">
         <h2>ჩვენ სუფთა მომავალს ვაშენებთ!</h2>
       </section>
-
+      <!--
       <section class="partner">
         <h2>პარტნიორები</h2>
 
@@ -239,8 +240,8 @@
           </div>
         </div>
       </section>
-
-      <section class="contact">
+    -->
+      <section class="contact" data-aos="zoom-in">
         <h2>დაგვიკავშირდით</h2>
 
         <form method="POST">
@@ -313,5 +314,12 @@
     <script src="./js/app.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+       AOS.init({
+        duration: 2000, 
+        once: true,    
+      });
+    </script>
   </body>
 </html>

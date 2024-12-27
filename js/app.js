@@ -37,7 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 5000,
       disableOnInteraction: false,
     },
-    effect: "slide",
+    effect: "fade",
     speed: 1250,
   });
+});
+
+//scroll to top
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+}
+
+window.onscroll = scrollFunction;
+
+scrollToTopBtn.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });

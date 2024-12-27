@@ -75,7 +75,7 @@ body {
 }
 
 .container {
-  max-width: 1800px;
+  max-width: 1920px;
   margin: auto;
 }
 
@@ -86,7 +86,7 @@ body {
   left: 0;
   top: 0;
   z-index: 999;
-  padding: 15px;
+  padding: 5px;
   background-color: #333333;
 }
 
@@ -99,30 +99,23 @@ body {
 }
 
 .header .logo {
-  padding: 0 15px;
-}
-
-.header .logo a {
-  font-size: 40px;
-  text-transform: capitalize;
-  color: rgb(43, 43, 192);
-  font-weight: 600;
+  padding: 0px 10px;
 }
 
 .header .nav-menu {
-  padding: 0 15px;
+  padding: 0 5px;
 }
 
 .header .menu > .menu-item {
   display: inline-block;
-  margin-left: 24px;
+  margin-left: 12px;
   position: relative;
 }
 
 .header .menu > .menu-item > a {
   display: block;
   padding: 12px 0;
-  font-size: 14.5px;
+  font-size: 13.5px;
   color: white;
   text-transform: capitalize;
   font-weight: 300;
@@ -131,10 +124,10 @@ body {
 
 .header .menu > .menu-item > a .plus {
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  height: 10px;
+  width: 10px;
   position: relative;
-  margin-left: 5px;
+  margin-left: 3px;
   pointer-events: none;
 }
 
@@ -199,7 +192,7 @@ body {
 .header .menu > .menu-item > .sub-menu > .menu-item > a {
   display: block;
   padding: 10px 20px;
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 400;
   color: #000000;
   transition: all 0.3s ease;
