@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 5000,
       disableOnInteraction: false,
     },
-    effect: "fade",
+    effect: "slide",
     speed: 1250,
   });
 });

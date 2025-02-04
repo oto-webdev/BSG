@@ -1,11 +1,10 @@
 /* swiper */
 .swiper-container {
   width: 100%;
-  height: 62.5vh;
+  height: 64vh;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  margin-top: 7rem;
 }
 
 .swiper-container a {

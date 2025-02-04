@@ -3,7 +3,7 @@ const openNavMenu = document.querySelector(".open-nav-menu"),
   closeNavMenu = document.querySelector(".close-nav-menu"),
   navMenu = document.querySelector(".nav-menu"),
   menuOverlay = document.querySelector(".menu-overlay"),
-  mediaSize = 1280;
+  mediaSize = 991;
 openNavMenu.addEventListener("click", toggleNav);
 closeNavMenu.addEventListener("click", toggleNav);
 menuOverlay.addEventListener("click", toggleNav);
@@ -51,4 +51,22 @@ window.addEventListener("resize", function () {
   if (this.innerWidth > mediaSize) {
     resizeFix();
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+
+    console.log("Scroll position:", window.scrollY); 
+
+    if (window.scrollY > 50) {
+      header.classList.add('header-sticky');
+      header.classList.add('nav-black');
+      console.log("Classes added:", header.classList);
+    } else {
+      header.classList.remove('header-sticky');
+      header.classList.remove('nav-black');
+      console.log("Classes removed:", header.classList);
+    }
+  });
 });
