@@ -57,16 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
 
-    console.log("Scroll position:", window.scrollY); 
-
-    if (window.scrollY > 50) {
+    if (window.scrollY > 0) {
       header.classList.add('header-sticky');
       header.classList.add('nav-black');
-      console.log("Classes added:", header.classList);
     } else {
       header.classList.remove('header-sticky');
       header.classList.remove('nav-black');
-      console.log("Classes removed:", header.classList);
     }
   });
 });

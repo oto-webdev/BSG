@@ -31,9 +31,7 @@ html {
 body {
   background-color: var(--background-color);
   color: var(--color);
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 ::-webkit-scrollbar {
@@ -82,11 +80,11 @@ body {
   top: 0;
   width: 100%;
   background: white !important;
-  transition: all 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   z-index: 999;
 }
 
-.nav-black a {
+.header a {
   color: black !important;
 }
 
@@ -126,7 +124,8 @@ body {
 .header .menu > .menu-item > a {
   display: block;
   padding: 12px 0;
-  font-size: 13.5px;
+  font-size: 15px;
+  line-height: 18px;
   color: rgb(212, 212, 212);
   text-transform: capitalize;
   font-weight: 300;
@@ -165,7 +164,8 @@ body {
 .header .menu > .menu-item > .sub-menu > .menu-item > a {
   display: block;
   padding: 10px 20px;
-  font-size: 13.5px;
+  font-size: 15px;
+  line-height: 18px;
   font-weight: 400;
   color: #000000;
   transition: all 0.3s ease;
@@ -239,6 +239,9 @@ body {
 
 /* responsive */
 @media (max-width: 991px) {
+  .header {
+    background-color: white;
+  }
   .header .menu-overlay.active {
     visibility: visible;
     opacity: 1;
@@ -253,6 +256,7 @@ body {
     overflow-y: auto;
     background-color: transparent;
     box-shadow: 0 0 1px #ffffff;
+    background-color: white;
     z-index: 1000;
     padding: 15px 0;
     transition: all 0.5s ease;
