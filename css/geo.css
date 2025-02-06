@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
 
 body {
-    font-family: "Bebas Neue", serif;
+    font-family: 'Noto Sans Georgian', sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 .header a {
-    font-family: 'Arial', sans-serif;
-    line-height: 10px;
+    font-family: "Vina Sans", serif;
+    font-weight: 700;
 }

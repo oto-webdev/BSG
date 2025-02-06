@@ -407,3 +407,14 @@ footer .footer-item {
     font-size: 1rem;
   }
 }
+
+@media (min-width: 991px) {
+  .header .menu > .menu-item > a {
+    color: #d3d3d3 !important; 
+    transition: color 0.3s ease;
+  }
+}
+
+.header-sticky .menu > .menu-item > a {
+  color: black !important;
+}
