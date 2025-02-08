@@ -69,16 +69,16 @@ main {
 @media(max-width: 768px) {
   main {
     padding: 4rem 2rem;
-  }
-}
-
-@media(max-width: 640px) {
-  main {
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
   }
+}
+
+.main-container-card {
+  padding: 2rem;
+  box-shadow: 0 0 1px #b6b6b6;
 }
 
 .main-container-card img {
