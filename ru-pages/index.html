@@ -18,9 +18,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="icon" href="../images/icon.png" />
+    <link rel="icon" href="../images/logo_2.png" />
     <title>Black Sea Group</title>
   </head>
   <body>
@@ -31,7 +32,7 @@
         <div class="header-main">
           <div class="logo">
             <a href="#">
-              <img src="../images/icon.png" alt="logo" width="64" height="44" />
+              <img src="../images/logo_2.png" alt="logo" width="80" height="72" width="80" height="72" />
             </a>
           </div>
           <div class="open-nav-menu">
@@ -41,7 +42,7 @@
           <!-- navigation menu start -->
           <nav class="nav-menu">
             <div class="close-nav-menu">
-              <img src="../images/icon.png" alt="close" />
+              <img src="../images/logo_2.png" width="80" height="72" alt="close" />
             </div>
             <ul class="menu">
               <li class="menu-item menu-item-has-children">
@@ -169,36 +170,36 @@
       <!-- Раздел "О нас" -->
       <section class="about">
         <div>
-          <h2>О нас</h2>
-          <p>
+          <h2 data-aos="fade-right">О нас</h2>
+          <p data-aos="fade-up">
             В современную эпоху реализация любой новой идеи и проекта начинается с пути. Мы строим дороги, соединяя города, улицы, здания, деревни.
           </p>
         </div>
         <div>
-          <img src="../images/About-Us.png" alt="о нас" />
+          <img src="../images/About-Us.png" alt="о нас" data-aos="fade-left" />
         </div>
       </section>
     
       <!-- Раздел "Проекты" -->
       <section class="project" id="project-section">
         <div>
-          <h2>95</h2>
-          <p>Проектов</p>
+          <h2 data-aos="fade-right">95</h2>
+          <p data-aos="fade-right">Проектов</p>
         </div>
         <div>
-          <h2>30</h2>
-          <p>Партнёров</p>
+          <h2 data-aos="fade-right">30</h2>
+          <p data-aos="fade-right">Партнёров</p>
         </div>
         <div>
-          <h2>700</h2>
-          <p>Работников</p>
+          <h2 data-aos="fade-right">700</h2>
+          <p data-aos="fade-right">Работников</p>
         </div>
       </section>
     
       <!-- Раздел "О проектах" -->
       <section class="about-projects">
         <div>
-          <h2>Проекты</h2>
+          <h2 data-aos="fade-right">Проекты</h2>
     
           <div class="card-list">
             <!-- Карточка завершенных проектов -->
@@ -221,12 +222,12 @@
     
       <!-- Раздел с текстом -->
       <section class="text">
-        <h2>Мы строим чистое будущее!</h2>
+        <h2 data-aos="fade-right">Мы строим чистое будущее!</h2>
       </section>
     
       <!-- Раздел с контактной формой -->
       <section class="contact">
-        <h2>Контакты</h2>
+        <h2 data-aos="fade-right">Контакты</h2>
     
         <form method="POST">
           <div class="input-group">
@@ -306,7 +307,7 @@
         </div>
       
         <div class="footer">
-          <img src="../images/footrer.png" alt="footer-png" />
+          <img src="../images/logo_2.png" width="80" height="72" alt="footer-png" />
           <p>&copy; Black Sea Group | Все права защищены</p>
         </div>
       </footer>      
@@ -314,5 +315,12 @@
     <script src="../js/app.js"></script>
     <script src="../js/main.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+       AOS.init({
+        duration: 1200, 
+        once: true,    
+      });
+    </script>
   </body>
 </html>
