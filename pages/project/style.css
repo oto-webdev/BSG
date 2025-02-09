@@ -148,3 +148,33 @@ main {
       height: 160px;
     }
 }
+
+.main {
+  margin: 8rem 20rem;
+}
+
+.main-projects {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.main-projects img {
+  margin-top: 6rem;
+  width: 300px;
+}
+
+@media(max-width: 768) {
+  .main-projects img {
+    width: 200px;
+  }
+
+  .main-projects {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    margin: 8rem 4rem;
+  }
+}
